@@ -42,6 +42,7 @@ class BMP280 : public Device {
 		// method
 		double readTemperature() ;
 		double readPressure() ;
+		double readAltitude(double seaLevelhPa = 1013.25);
 
 		
 };

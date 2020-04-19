@@ -37,3 +37,30 @@ Blockly.Blocks['bmp280_read_pressure'] = {
 		});
 	}
 };
+
+Blockly.Blocks['bmp280_read_altitude'] = {
+	init: function() {
+		this.jsonInit({
+			"type": "bmp280_read_altitude",
+			"message0": Blockly.Msg.BMP280_READ_ALTITUDE_MESSAGE,
+			"args0": [{
+				"type": "field_dropdown",
+				"name": "addr",
+				"options": [
+					[ "0x76", "0x76" ],
+					[ "0x77", "0x77" ]
+				]
+			}, {
+				"type": "field_number",
+				"name": "seaLevelhPa",
+				"value": 1013.25,
+				"min": 0
+			}],
+			"inputsInline": true,
+			"output": "Number",
+			"colour": 135,
+			"tooltip": Blockly.Msg.BMP280_READ_ALTITUDE_TOOLTIP,
+			"helpUrl": ""
+		});
+	}
+};

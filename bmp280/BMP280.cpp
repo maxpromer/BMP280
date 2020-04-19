@@ -152,4 +152,15 @@ double BMP280::readPressure() {
 	return pressure;
 }
 
+double BMP280::readAltitude(double seaLevelhPa) {
+  float altitude;
+
+  float pressure = this->pressure; // in Si units for Pascal
+  pressure /= 100;
+
+  altitude = 44330 * (1.0 - pow(pressure / seaLevelhPa, 0.1903));
+
+  return altitude;
+}
+
 #endif
